@@ -16,7 +16,7 @@
   </head>
   <body>
     <img id="floatingImage" src="heart.png" alt="" />
-    <div class="wrap potta-one-regular">
+    <div id="content" class="wrap potta-one-regular">
       <div id="show-text" class="potta-one-regular">
         <p>雖然我們認識第一天就在一起了，</p>
         <p>但還是想正式向帥帥表白：</p>
@@ -26,11 +26,29 @@
         <p>給 Yubay 帥帥</p>
         <p>click me</p>
       </div>
-      <div class="image"><img src="front.png" alt="" /></div>
+      <div id="floatingElement" class="image">
+        <img src="front.png" alt="" />
+      </div>
     </div>
   </body>
   <script>
-    $(document).ready(function () {
+    document.addEventListener("DOMContentLoaded", function () {
+      var floatingElement = document.getElementById("floatingElement");
+      function moveElementToBottom() {
+        var contentHeight = document.getElementById("content").offsetHeight;
+        var windowHeight = window.innerHeight;
+        var bottomPosition = windowHeight - contentHeight;
+
+        // 设置元素底部位置
+        floatingElement.style.bottom = bottomPosition + "px";
+      }
+
+      // 初始位置
+      moveElementToBottom();
+
+      // 监听窗口大小变化事件，以便调整元素位置
+      window.addEventListener("resize", moveElementToBottom);
+
       var animationRunning = false;
 
       function animateImage() {

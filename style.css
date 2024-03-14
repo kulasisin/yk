@@ -147,7 +147,7 @@ body {
 }
 
 .image {
-  position: absolute;
+  position: fixed;
   background-image: url(back.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -156,7 +156,7 @@ body {
   justify-content: center;
   width: 75%;
   height: auto;
-  bottom: 0;
+  bottom: 0%;
 }
 .image img {
   width: 70%;
