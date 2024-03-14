@@ -183,6 +183,9 @@ body {
   margin: 30px 10px 30px 10px;
 }
 .text:hover {
+  cursor: pointer;
+}
+.text:active {
   background-color: white;
   color: gray;
   cursor: pointer;
