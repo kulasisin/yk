@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yubay & Kulas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Potta+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <img id="floatingImage" src="heart.png" alt="" />
+    <div class="wrap potta-one-regular">
+      <div id="show-text" class="potta-one-regular">
+        <p>雖然我們認識第一天就在一起了，</p>
+        <p>但還是想正式向帥帥表白：</p>
+        <p>可不可以當我的男朋友壓？</p>
+      </div>
+      <div class="text" id="open-button">
+        <p>給 Yubay 帥帥</p>
+        <p>click me</p>
+      </div>
+      <div class="image"><img src="front.png" alt="" /></div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function () {
+      var animationRunning = false;
+
+      function animateImage() {
+        // 执行上升动画
+        $("#floatingImage")
+          .css("top", "100%")
+          .animate({ top: "0" }, 3000, "swing", function () {
+            // 在动画完成后继续执行动画（递归）
+            if (animationRunning) {
+              animateImage();
+            }
+          });
+      }
+
+      $("#open-button").click(function () {
+        $("#show-text").fadeToggle(); // 点击后切换显示状态
+        if (!animationRunning) {
+          animationRunning = true;
+          $("#floatingImage").fadeIn(1000, function () {
+            // 在淡入后开始执行动画
+            animateImage();
+          });
+        } else {
+          // 停止动画并隐藏图片
+          animationRunning = false;
+          $("#floatingImage").fadeOut().stop();
+        }
+      });
+    });
+  </script>
+</html>

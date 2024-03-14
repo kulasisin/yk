@@ -1,0 +1,222 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: #f9f6d7;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  overflow: hidden;
+}
+.wrap {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  height: 100vh;
+  line-height: 1.5;
+  overflow: hidden;
+}
+.potta-one-regular {
+  font-family: "Potta One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.image {
+  background-image: url(back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  height: auto;
+}
+.image img {
+  width: 70%;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#floatingImage {
+  width: 10%;
+  z-index: 99;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none; /* 初始状态隐藏 */
+}
+.text {
+  position: absolute;
+  top: 0px;
+  color: white;
+  background-color: rgb(241, 137, 154);
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 10px 30px 10px;
+}
+.text:hover {
+  background-color: white;
+  color: gray;
+  cursor: pointer;
+}
+#show-text {
+  display: none;
+  background-color: rgba(254, 214, 221, 0.927);
+  color: rgb(70, 70, 70);
+  position: absolute;
+  font-size: 25px;
+  z-index: 100;
+  text-align: center;
+  bottom: 50%;
+  padding: 10px 30px;
+}
+@media (max-width: 768px) {
+  .image {
+    background-image: url(back_small.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .image img {
+    width: 70%;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 576px) {
+  #show-text {
+    font-size: 18px;
+  }
+}
