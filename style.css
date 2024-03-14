@@ -135,7 +135,7 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: self-end;
+  /* align-items: self-end; */
   height: 100vh;
   line-height: 1.5;
   overflow: hidden;
@@ -147,6 +147,7 @@ body {
 }
 
 .image {
+  position: absolute;
   background-image: url(back.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -155,6 +156,7 @@ body {
   justify-content: center;
   width: 75%;
   height: auto;
+  bottom: 0;
 }
 .image img {
   width: 70%;
@@ -174,6 +176,7 @@ body {
 .text {
   position: absolute;
   top: 0px;
+  z-index: 98;
   color: white;
   background-color: rgb(241, 137, 154);
   border-radius: 50px;
